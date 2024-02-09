@@ -1,12 +1,13 @@
 from datetime import datetime
+import os
 from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes,CallbackContext
 import requests
 
-TOKEN: Final = "6803932950:AAFCtukg6LOo7k5-kaUgm1Jd5fktwtLW-dE"
-BOT_USERNAME: Final = "@trip_cmd_bot"
-API_URL = 'http://fastapi-backend:8000'
+TOKEN: Final = os.environ['TOKEN']
+BOT_USERNAME: Final = os.environ['BOT_USERNAME']
+API_URL = os.environ['API_URL']
 API_ENDPOINT='/trips'
 
 chat_ids = []
